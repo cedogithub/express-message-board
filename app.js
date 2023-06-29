@@ -9,6 +9,9 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+// Set the desired port number
+const port = 3001; // Replace with your preferred port number
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -36,6 +39,11 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+// Start the server on the specified port
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
 
 module.exports = app;

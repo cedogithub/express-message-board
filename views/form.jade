@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+  
+  
+  form(method="POST", action="/new")
+    input(type="text", name="user", placeholder="Enter your name")
+    input(type="text", name="text", placeholder="Enter your message")
+    input(type="hidden", name="added", value=Date.now())
+    button(type="submit") Submit
